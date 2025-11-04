@@ -1,0 +1,48 @@
+<tr class="border-b border-gray-700 hover:bg-gray-700">
+  <td class="py-3 px-6">{{rank}}</td>
+  <td class="py-3 px-6">
+  <div class="flex items-center gap-3">
+    <img src="https://static.coincap.io/assets/icons/{{symbolLower}}@2x.png" alt="{{symbol}}" class="w-8 h-8 rounded-full object-cover">
+    <div>
+      <div class="text-sm font-semibold">{{name}}</div>
+      <div class="text-xs text-gray-400">{{symbol}}</div>
+    </div>
+  </div>
+</td>
+  <td class="py-3 px-6">${{price}}</td>
+  <td class="py-3 px-6">€{{priceEur}}</td>
+  <td class="py-3 px-6">${{marketCap}}</td>
+  <td class="py-3 px-6"><span class="{{color}}">{{change}}%</span></td>
+  <td class="py-3 px-6">
+    <button 
+  class="show-info-btn bg-blue-500 px-4 py-2 rounded" 
+  data-id="{{id}}" 
+  data-name="{{name}}" 
+  data-symbol="{{symbol}}" 
+  data-price="{{price}}" 
+  data-marketcap="{{marketCap}}" 
+  data-change="{{change}}">
+  Info
+</button>
+<td class="py-3 px-6 text-left">
+  {{#canBuy}}
+    <button class="show-buy-btn bg-red-500 px-4 py-2 rounded">
+      Buy
+    </button>
+  {{/canBuy}}
+  {{^canBuy}}
+    <div class="relative group inline-block">
+      <button 
+        class="show-buy-btn bg-gray-500 px-4 py-2 cursor-not-allowed rounded"
+        disabled>
+        Buy
+      </button>
+      <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 hidden group-hover:block bg-black text-white text-xs rounded-md px-2 py-1 whitespace-nowrap shadow-lg">
+        You need to login to buy crypto
+      </div>
+    </div>
+  {{/canBuy}}
+</td>
+
+  </td>
+</tr>

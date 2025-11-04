@@ -1,0 +1,13 @@
+<div class="bg-gray-800 rounded-lg shadow-lg w-[500px] p-8 relative transform scale-95 opacity-0 transition-all duration-300">
+  <button id="close-modal"
+    class="absolute top-1 right-2 text-gray-400 hover:text-white text-3xl">&times;</button>
+  <h2 class="text-3xl font-bold mb-4">{{name}}</h2>
+  <p class="text-lg"><strong>Symbol:</strong> {{symbol}}</p>
+  <p class="text-lg"><strong>Price:</strong> ${{price}}</p>
+  <p class="text-lg"><strong>Market Cap:</strong> ${{marketCap}}</p>
+  <p class="text-lg"><strong>24h Change:</strong> <span class="{{color}}">{{change}}%</span></p>
+  <!-- Chart container -->
+  <div class="mt-6">
+    <canvas id="priceChart" class="w-full h-56"></canvas>
+  </div>
+</div>

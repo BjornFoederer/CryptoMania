@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Crypto Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Mustache.js toevoegen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen">
+    <div id="crypto-navbar"></div>
+    <!-- Main content -->
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold text-gray-300 mb-10 ml-4">Crypto Exchanges</h1>
+        <div id="exchange-list" class="space-y-4"></div>
+    </div>
+
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/crypto.js"></script>
+    <script src="js/chart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Crypto Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Mustache.js toevoegen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen">
+    <div id="crypto-navbar"></div>
+    <div class="flex justify-center items-center mt-16">
+        <form class="bg-gray-800 p-8 rounded-lg shadow-md w-full max-w-md space-y-6" method="post"
+            action="database/register.php">
+            <h2 class="text-2xl font-bold text-center text-sky-400">Registeren</h2>
+
+            <!-- Naam -->
+            <div>
+                <label for="name" class="block text-white font-medium mb-2">Naam</label>
+                <input type="text" id="name" name="username" placeholder="Voer je naam in"
+                    class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-sky-400">
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label for="email" class="block text-white font-medium mb-2">Email</label>
+                <input type="email" id="email" name="email" placeholder="Voer je email in"
+                    class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-sky-400">
+            </div>
+
+            <!-- Password -->
+            <div>
+                <label for="password" class="block text-white font-medium mb-2">Wachtwoord</label>
+                <input type="password" id="password" name="password" placeholder="Voer je wachtwoord in"
+                    class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-sky-400">
+            </div>
+
+            <!-- Submit -->
+            <button type="submit"
+                class="w-full py-2 bg-sky-500 rounded-lg text-white font-semibold hover:bg-sky-600 transition">Registeren</button>
+            <div class="text-white mt-5 hover:text-sky-400 transition mt-20">
+                <a href="login.html">Heb je al een account?</a>
+            </div>
+
+        </form>
+    </div>
+    <!-- Custom JS -->
+    <script src="js/crypto.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

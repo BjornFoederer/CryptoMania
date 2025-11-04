@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Crypto Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Mustache.js toevoegen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen">
+    <div id="crypto-navbar"></div>
+    <!-- Main content -->
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col-reverse md:flex-row min-h-[calc(100vh-5rem)] items-center">
+
+            <!-- Tekstgedeelte -->
+            <div class="w-full md:w-2/3 lg:w-5/6 text-center md:text-left">
+                <h1 class="text-gray-300 text-4xl sm:text-6xl lg:text-8xl font-semibold p-4">
+                    Ontdek en koop crypto eenvoudig met CryptoMania
+                </h1>
+                <p class="text-lg sm:text-xl lg:text-2xl p-4">
+                    CryptoMania is jouw startpunt in de wereld van digitale valuta. Op dit platform
+                    koop en ontdek je eenvoudig de populairste cryptomunten. Met realtime prijzen,
+                    duidelijke informatie en een veilige omgeving helpt CryptoMania zowel beginners
+                    als ervaren traders om slimme keuzes te maken en hun cryptoportfolio te laten groeien.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start p-4">
+                    <button id="scrollTo"
+                        class="bg-blue-500 rounded-full text-lg px-6 py-3 m-2 hover:bg-blue-600 duration-500">
+                        Start Nu!
+                    </button>
+                    <button id="scrollTo"
+                        class="bg-red-500 rounded-full text-lg px-6 py-3 m-2 hover:bg-red-600 duration-500">
+                        Ontdek de nieuwste crypto!
+                    </button>
+                </div>
+            </div>
+
+            <!-- Afbeeldingen -->
+            <div class="w-full md:w-1/2 flex flex-col items-center">
+                <img src="img/CryptoManiaHero1.jpg" alt="CryptoMania voorbeeld 1" class="w-full h-auto rounded-xl p-2">
+                <img src="img/CryptoManiaHero2.png" alt="CryptoMania voorbeeld 2" class="w-full h-auto rounded-xl p-2">
+            </div>
+        </div>
+
+
+        <!-- Table (alleen zichtbaar vanaf md en groter) -->
+        <div class="overflow-x-auto hidden lg:block">
+            <table class="min-w-full bg-gray-800 rounded-lg shadow-lg overflow-hidden my-10" id="crypto-table">
+                <thead>
+                    <tr class="bg-gray-700 text-gray-300 uppercase text-sm leading-normal">
+                        <th class="py-3 px-6 text-left rounded-tl-lg">Rank</th>
+                        <th class="py-3 px-6 text-left">Name</th>
+                        <th class="py-3 px-6 text-left">Price (USD)</th>
+                        <th class="py-3 px-6 text-left">Price (Euro)</th>
+                        <th class="py-3 px-6 text-left">Market Cap</th>
+                        <th class="py-3 px-6 text-left">24h Change</th>
+                        <th class="py-3 px-6 text-left">Info</th>
+                        <th class="py-3 px-6 text-left rounded-tr-lg">Buy?</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-300 text-sm font-light" id="crypto-body">
+                    <!-- Dynamic crypto data via Mustache -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Card weergave (alleen zichtbaar op mobiel) -->
+        <div class="grid gap-4 lg:hidden" id="crypto-cards">
+            <!-- Dynamic crypto cards via Mustache -->
+        </div>
+    </div>
+
+    <!-- Modal container (wordt gevuld via Mustache) -->
+    <div id="crypto-info-modal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 z-50">
+    </div>
+    <!-- Modal container voor kopen -->
+    <div id="crypto-buy-modal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 z-50">
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/crypto.js"></script>
+    <script src="js/chart.js"></script>
+
+</body>
+
+</html>

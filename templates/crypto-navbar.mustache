@@ -1,0 +1,49 @@
+<!-- Navbar -->
+<nav class="w-full shadow-md">
+  <div class="mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Links: logo -->
+      <div class="flex-shrink-0">
+        <a href="index.html">
+          <img src="img/CryptoManiaLogo.png" alt="CryptoManiaLogo" class="w-16">
+        </a>
+      </div>
+
+      <!-- Midden: navigatie links -->
+      <div class="hidden md:flex space-x-8 text-gray-800 font-medium text-xl">
+        <a href="nieuws.html" class="text-sky-500 hover:text-sky-400 transition">Nieuws</a>
+        <a href="exchanges.html" class="text-sky-500 hover:text-sky-400 transition">Exchanges</a>
+      </div>
+
+      <!-- Rechts: user login/profiel -->
+      <div class="flex items-center space-x-3">
+        {{#user}}
+        <!-- Als ingelogd -->
+        <div class="relative">
+          <button id="profileBtn" class="focus:outline-none">
+            <img src="img/CryptoManiaProfile.png" alt="Profile"
+                 class="w-10 h-auto rounded-full border bg-gray-200 cursor-pointer">
+          </button>
+          <div id="dropdownMenu"
+               class="absolute right-0 mt-2 w-40 bg-black text-white shadow-md rounded-lg hidden">
+            <a href="nieuws.html" class="block px-4 py-2 hover:bg-gray-600 rounded-t-lg duration-400 md:hidden">Nieuws</a>
+            <a href="exchanges.html" class="block px-4 py-2 hover:bg-gray-600 rounded-t-lg duration-400 md:hidden">Exchange</a>
+            <a href="wallet.php" class="block px-4 py-2 hover:bg-gray-600 rounded-t-lg duration-400">Wallet</a>
+            <a href="database/logout.php" class="block px-4 py-2 hover:bg-gray-600 rounded-b-lg duration-400">Uitloggen</a>
+          </div>
+        </div>
+        {{/user}}
+
+        {{^user}}
+        <!-- Als niet ingelogd -->
+        <a href="login.html"
+           class="px-4 py-2 bg-sky-500 text-white rounded-lg font-medium hover:bg-sky-600 transition">Login</a>
+        <a href="register.html"
+           class="px-4 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-600 transition">Register</a>
+        {{/user}}
+      </div>
+
+    </div>
+  </div>
+</nav>
